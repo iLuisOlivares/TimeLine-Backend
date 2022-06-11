@@ -8,5 +8,6 @@ import java.util.Optional;
 
 public interface RecuerdoServInterface {
     public List<Recuerdo> getRecuerdos() throws NotFoundException;
-    public Recuerdo updateRecuerdo(Recuerdo recuerdo) throws NotFoundException;
+    public Recuerdo saveRecuerdos(Recuerdo recuerdo);
+    public Recuerdo updateRecuerdo(Long id) throws NotFoundException;
 }

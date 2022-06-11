@@ -27,16 +27,17 @@ public class RecuerdoService implements RecuerdoServInterface {
     }
 
     @Override
-    public Recuerdo updateRecuerdo(Recuerdo recuerdo) throws NotFoundException {
-       if (recuerdoRepository.existsById(recuerdo.getId())){
-        Recuerdo recuerdo_old = recuerdoRepository.findById(recuerdo.getId()).orElseThrow(
+    public Recuerdo saveRecuerdos(Recuerdo recuerdo)  {
+        return recuerdoRepository.save(recuerdo);
+    }
+
+    @Override
+    public Recuerdo updateRecuerdo(Long id) throws NotFoundException {
+        Recuerdo recuerdo_old = recuerdoRepository.findById(id).orElseThrow(
                 ()-> new NotFoundException("Recuerdo no encontrado")
         );
-        recuerdo_old.setActivo(recuerdo.isActivo());
+        recuerdo_old.setActivo(false);
         return recuerdoRepository.save(recuerdo_old);
-       }else{
-           return recuerdoRepository.save(recuerdo);
-       }
     }
 
 }

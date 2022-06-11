@@ -20,9 +20,14 @@ public class RecuerdoController {
         return ResponseEntity.ok().body(recuerdoService.getRecuerdos());
     }
 
-    @PostMapping("/recuerdos/update")
-    public ResponseEntity<Recuerdo> updateRecuerdos(@RequestBody Recuerdo recuerdo) throws NotFoundException {
-        return ResponseEntity.ok().body(recuerdoService.updateRecuerdo(recuerdo));
+    @PostMapping("/recuerdos/save")
+    public ResponseEntity<Recuerdo> saveRecuerdos(@RequestBody Recuerdo recuerdo) {
+        return ResponseEntity.ok().body(recuerdoService.saveRecuerdos(recuerdo));
+    }
+
+    @PostMapping("/recuerdos/update/{id}")
+    public ResponseEntity<Recuerdo> updateRecuerdos(@PathVariable("id") Long id) throws NotFoundException {
+        return ResponseEntity.ok().body(recuerdoService.updateRecuerdo(id));
     }
 
 }

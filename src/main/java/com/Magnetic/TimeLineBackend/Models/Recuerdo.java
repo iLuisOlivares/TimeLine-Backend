@@ -17,8 +17,7 @@ import static javax.persistence.GenerationType.AUTO;
 @AllArgsConstructor
 public class Recuerdo {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(unique = true,nullable = false)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String titulo;
     private String descripcion;
@@ -26,4 +25,11 @@ public class Recuerdo {
     private Date fecha;
     private boolean activo;
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

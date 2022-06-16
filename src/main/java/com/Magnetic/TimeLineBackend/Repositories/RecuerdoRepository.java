@@ -8,4 +8,5 @@ import java.util.Optional;
 
 public interface RecuerdoRepository extends CrudRepository<Recuerdo, Long> {
     List<Recuerdo> findAllByActivoIsTrue();
+    List<Recuerdo> findAllByActivoIsTrueOrderByFecha();
 }

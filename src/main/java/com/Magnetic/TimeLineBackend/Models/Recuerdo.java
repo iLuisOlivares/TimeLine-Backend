@@ -22,7 +22,7 @@ public class Recuerdo {
     private String titulo;
     private String descripcion;
     private String imgUrl;
-    private Date fecha;
+    private String fecha;
     private boolean activo;
 
     public void setId(Long id) {

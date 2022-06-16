@@ -23,7 +23,7 @@ public class RecuerdoService implements RecuerdoServInterface {
 
     @Override
     public List<Recuerdo> getRecuerdos() throws NotFoundException {
-        return recuerdoRepository.findAllByActivoIsTrue();
+        return recuerdoRepository.findAllByActivoIsTrueOrderByFecha();
     }
 
     @Override
